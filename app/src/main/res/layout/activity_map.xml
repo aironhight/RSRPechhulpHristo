@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:map="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activities.Map.MapActivity" />
+
+    <!--Toolbar-->
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_map"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:background="@color/colorPrimary">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:id="@+id/toolbar_home_up">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="19dp"
+                android:layout_centerInParent="true"
+                android:adjustViewBounds="true"
+                android:background="@drawable/menu_arrow"
+                android:padding="4dp"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:id="@+id/toolbar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@color/colorPrimary"
+                android:textColor="@color/whiteText"
+                android:layout_marginLeft="@dimen/toolbar_text_marginLeft"/>
+        </LinearLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/clockProgressBar"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:indeterminateDrawable="@drawable/clock"
+        />
+
+    <!-- Call button -->
+    <RelativeLayout
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:background="@drawable/main_btn_bg"
+        android:layout_alignParentBottom="true"
+        android:layout_marginVertical="10dp"
+        android:clickable="true"
+        android:id="@+id/btn_map_call"
+        android:layout_centerHorizontal="true"
+
+        >
+
+        <ImageView
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/map_btn_tel"
+            android:paddingVertical="6dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/map_call_button"
+            android:textColor="@color/whiteText"
+            android:gravity="center"
+            />
+    </RelativeLayout>
+
+
+
+
+    <!-- End of call button -->
+
+</RelativeLayout>

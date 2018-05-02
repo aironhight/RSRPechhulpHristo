@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content"
+    android:orientation="vertical"
+    android:alpha="0.12"
+    android:background="@drawable/popup_bg"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left|right|center_horizontal|fill_horizontal|center|fill|start|end"
+        android:layout_gravity="left|right|center_horizontal|fill_horizontal|center|fill|start|end"
+        android:textAlignment="center"
+        android:text="@string/map_info_window_title"
+        android:textStyle="bold"
+        android:textColor="@color/whiteText"
+        />
+
+    <TextView
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/addressInfoTextView"
+        android:textColor="@color/whiteText"
+        android:padding="@dimen/about_text_padding"
+        android:text="@string/map_info_window_obtaining_address"
+        android:inputType="textMultiLine"
+        android:minLines="2"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/whiteText"
+        android:padding="@dimen/about_text_padding"
+        android:text="@string/map_info_window_text"
+        android:lines="2"/>
+
+</LinearLayout>

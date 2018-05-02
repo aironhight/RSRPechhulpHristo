@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:minHeight="200dp"
+    android:minWidth="400dp"
+    android:orientation="vertical">
+
+    <!-- Close button with text -->
+    <LinearLayout
+        android:id="@+id/btn_map_close_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:gravity="bottom"
+        android:orientation="horizontal"
+        android:background="@color/yellowBG">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:src="@drawable/main_btn_close" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:text="Annuleren"
+            android:textColor="@color/whiteText" />
+
+
+    </LinearLayout>
+    <!-- End of  close button -->
+
+
+    <!-- Text field -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@color/yellowBG"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Belkosten"
+            android:textAlignment="center"
+            android:textColor="@color/whiteText"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="50dp"
+            android:paddingVertical="20dp"
+            android:text="@string/charging_rate_info"
+            android:textAlignment="center"
+            android:textColor="@color/whiteText" />
+
+        <!--Button layout-->
+        <LinearLayout
+            android:id="@+id/btn_map_call_confirmed"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginVertical="10dp"
+            android:alpha="1"
+            android:background="@drawable/main_btn_bg"
+            android:clickable="true">
+
+            <ImageView
+                android:layout_width="65dp"
+                android:layout_height="wrap_content"
+                android:paddingVertical="6dp"
+                android:src="@drawable/map_btn_phone" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/popup_call_button"
+                android:textColor="@color/whiteText" />
+        </LinearLayout>
+        <!--End of button layout-->
+    </LinearLayout>
+    <!--End of text field-->
+
+
+</LinearLayout>
+
+

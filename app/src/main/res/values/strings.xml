@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">RSR Pechhulp - Hristo</string>
+    <string name="label_activity_map">RSR Pechhulp</string>
+    <string name="label_activity_main">RSR Revalidatieservice</string>
+    <string name="label_activity_about">Over RSR</string>
+
+    <string name="gps_network_not_enabled_title">Locatieservices uitgeschakeld</string>
+    <string name="gps_network_not_enabled">RSR pechhulp heft toegang tot uw locatie nodig. Schakel locatietoegang in.</string>
+    <string name="no_internet_connection_title">Geen internetverbinding</string>
+    <string name="no_internet_connection">Er is geen verbinding mogelijk met het internet. Hierdoor kunnen uw locatiegegevens niet worden opgehaald.</string>
+    <string name="open_location_settings">Ga naar instellingen</string>
+    <string name="try_again">Probeer opnieuw</string>
+    <string name="cancel">Annuleren</string>
+    <string name="charging_rate_info">9,4 cent per gesprek plus 2,8 cent per minuut, plus uw gebruikelijke belkosten.</string>
+    <string name="emergency_number">+123456789</string>
+    <string name="text_about_activity">"MMet de hulpmiddelen van RSR blijft u mobiel. RSR is dé leverancier van hulpmiddelen in de regio Noordoost-Nederland. Gedegen kennis en jarenlange ervaring zit in ons DNA verweven en leidt tot het beste advies.\n\nWilt u meer weten over onze producten en diensten, kijk dan op www.rsr.nl of bezoek onze showrooms in Silvolde en Nieuwleusen. We zijn iedere werkdag geopend van 8.00 tot 17.00 uur. Hier kunt u diverse hulpmiddelen uitproberen en rustig bekijken wat goed bij uw situatie aansluit. Samen met u zoeken we naar het hulpmiddel dat bij u past. RSR maakt mensen mobiel."</string>
+    <string name="map_info_window_text">Onthoud deze locatie voor het \ntelefoongesprek</string>
+    <string name="map_info_window_title">Uw Locatie:</string>
+    <string name="map_info_window_obtaining_address">Verkrijgen adres...</string>
+    <string name="map_call_button">Bel RSR nu</string>
+    <string name="popup_call_button">Bel nu</string>
+</resources>
