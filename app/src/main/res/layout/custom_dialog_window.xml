@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_centerHorizontal="true"
+    android:id="@+id/dialog_panel"
+    android:visibility="gone">
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:minHeight="200dp"
-    android:minWidth="400dp"
-    android:orientation="vertical">
-
-    <!-- Close button with text -->
-    <LinearLayout
+        <!-- Close button with text -->
+    <RelativeLayout
         android:id="@+id/btn_map_close_dialog"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
         android:clickable="true"
         android:gravity="bottom"
-        android:orientation="horizontal"
-        android:background="@color/yellowBG">
+        android:orientation="horizontal">
 
         <android.support.v7.widget.AppCompatImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/colorPrimary"
+            android:scaleType="fitCenter"
             android:src="@drawable/main_btn_close" />
 
         <TextView
@@ -32,19 +32,24 @@
             android:text="Annuleren"
             android:textColor="@color/whiteText" />
 
+    </RelativeLayout>
+        <!-- End of  close button -->
 
-    </LinearLayout>
-    <!-- End of  close button -->
 
-
-    <!-- Text field -->
-    <LinearLayout
+        <!-- Text field  + Button-->
+    <RelativeLayout
+        android:layout_below="@id/btn_map_close_dialog"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:layout_gravity="center"
         android:background="@color/yellowBG"
+        android:layout_alignParentBottom="true"
         android:orientation="vertical"
-        android:padding="20dp">
+        android:padding="20dp"
+        android:id="@+id/dialog_window_frame">
+
 
         <TextView
             android:layout_width="match_parent"
@@ -64,13 +69,11 @@
             android:textColor="@color/whiteText" />
 
         <!--Button layout-->
-        <LinearLayout
+        <RelativeLayout
             android:id="@+id/btn_map_call_confirmed"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
+            style="@style/mainButton"
             android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginVertical="10dp"
+            android:layout_gravity="center_horizontal"
             android:alpha="1"
             android:background="@drawable/main_btn_bg"
             android:clickable="true">
@@ -87,12 +90,14 @@
                 android:gravity="center"
                 android:text="@string/popup_call_button"
                 android:textColor="@color/whiteText" />
-        </LinearLayout>
+        </RelativeLayout>
         <!--End of button layout-->
-    </LinearLayout>
-    <!--End of text field-->
+    </RelativeLayout>
+        <!--End of text field-->
+
+</RelativeLayout>
 
 
-</LinearLayout>
+
 
 

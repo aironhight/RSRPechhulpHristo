@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:background="@color/colorPrimary"
+        android:background="@drawable/btn_bg"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
@@ -26,12 +26,10 @@
 
             <ImageView
                 android:id="@+id/backButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:scaleType="centerCrop"
-                android:adjustViewBounds="true"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:layout_centerInParent="true"
-
+                android:src="@drawable/menu_arrow"
                 />
 
             <TextView
@@ -76,16 +74,15 @@
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:padding="@dimen/about_text_padding_large"
             android:text="@string/text_about_activity"
             android:textAlignment="textStart"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="20sp"
+            android:textColor="#000"
+            android:textSize="18sp"
             android:autoLink="web"
-            android:textColorLink="@color/colorPrimary"
+            android:textColorLink="@color/linkText"
+            android:lineSpacingExtra = "7sp"
+            style="@style/textAboutLarge"
+
             />
     </ScrollView>
 

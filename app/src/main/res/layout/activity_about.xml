@@ -10,41 +10,39 @@
     android:layout_centerVertical="true">
 
     <!--Toolbar-->
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:background="@drawable/main_btn_bg">
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:background="@color/colorPrimary"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
+            android:orientation="horizontal"
+            android:id="@+id/toolbar_home_up"
+            android:gravity="center_vertical">
 
-            <LinearLayout
+            <ImageView
+                android:layout_width="7dp"
+                android:layout_height="15dp"
+                android:layout_centerInParent="true"
+                android:adjustViewBounds="true"
+                android:background="@drawable/menu_arrow"
+                android:padding="7dp"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:id="@+id/toolbar_title"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:id="@+id/toolbar_home_up"
-                >
-
-                <ImageView
-                    android:id="@+id/backButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/menu_arrow"
-                    android:cropToPadding="true"
-                    android:paddingHorizontal="10dp"/>
-
-                <TextView
-                    android:id="@+id/toolbar_title"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:background="@color/colorPrimary"
-                    android:textColor="@color/whiteText"
-                    android:textSize="@dimen/toolbar_text_size"/>
-            </LinearLayout>
-        </android.support.v7.widget.Toolbar>
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@color/linkText"
+                android:textColor="@color/whiteText"
+                android:layout_marginLeft="@dimen/toolbar_text_marginLeft"/>
+        </LinearLayout>
+    </android.support.v7.widget.Toolbar>
 
 
 

@@ -4,6 +4,7 @@
     <color name="colorPrimaryDark">#000000</color>
     <color name="colorAccent">#FF4081</color>
     <color name="whiteText">#ffffff</color>
-    <color name="yellowBG">#beda08</color>
+    <color name="yellowBG">#cad302</color>
     <color name="aboutText">#000</color>
+    <color name="linkText">#0092bb</color>
 </resources>

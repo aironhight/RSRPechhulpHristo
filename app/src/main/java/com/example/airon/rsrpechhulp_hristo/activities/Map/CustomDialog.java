@@ -7,9 +7,11 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.constraint.ConstraintLayout;
 import android.view.View;
 import android.view.Window;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import com.example.airon.rsrpechhulp_hristo.R;
 
@@ -20,7 +22,7 @@ public class CustomDialog extends Dialog implements android.view.View.OnClickLis
 
     public Activity c;
     public Dialog d;
-    public LinearLayout call, closeButton;
+    public RelativeLayout call,closeButton;
 
     public CustomDialog(Activity activity) {
         super(activity);

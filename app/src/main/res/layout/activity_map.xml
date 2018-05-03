@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<RelativeLayout
+<RelativeLayout xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android" >
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <fragment xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:map="http://schemas.android.com/apk/res-auto"
@@ -20,21 +21,22 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:background="@color/colorPrimary">
+        android:background="@drawable/main_btn_bg">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:id="@+id/toolbar_home_up">
+            android:id="@+id/toolbar_home_up"
+            android:gravity="center_vertical">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="19dp"
+                android:layout_width="7dp"
+                android:layout_height="15dp"
                 android:layout_centerInParent="true"
                 android:adjustViewBounds="true"
                 android:background="@drawable/menu_arrow"
-                android:padding="4dp"
+                android:padding="7dp"
                 android:scaleType="centerCrop" />
 
             <TextView
@@ -59,22 +61,18 @@
 
     <!-- Call button -->
     <RelativeLayout
-        android:layout_width="300dp"
-        android:layout_height="50dp"
         android:background="@drawable/main_btn_bg"
         android:layout_alignParentBottom="true"
-        android:layout_marginVertical="10dp"
         android:clickable="true"
         android:id="@+id/btn_map_call"
-        android:layout_centerHorizontal="true"
-
-        >
+        android:layout_centerInParent="true"
+        style="@style/mainButton">
 
         <ImageView
             android:layout_width="65dp"
             android:layout_height="wrap_content"
             android:src="@drawable/map_btn_tel"
-            android:paddingVertical="6dp"
+            android:padding="10dp"
             />
 
         <TextView
@@ -85,10 +83,101 @@
             android:gravity="center"
             />
     </RelativeLayout>
-
-
-
-
     <!-- End of call button -->
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:paddingBottom="5dp"
+        android:alpha="0.85"
+        android:id="@+id/dialog">
+
+        <ImageView
+            android:id="@+id/button2"
+            style="@android:style/Widget.Holo.Button.Borderless.Small"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:clickable="true"
+            android:src="@drawable/main_btn_close"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@color/colorPrimary"/>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="18dp"
+            android:background="@color/colorPrimary"
+            android:text="Annuleren"
+            android:textColor="@color/whiteText"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+            app:layout_constraintStart_toEndOf="@+id/button2"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="300dp"
+            android:layout_height="200dp"
+            android:background="@color/yellowBG"
+            app:layout_constraintTop_toBottomOf="@id/button2">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/map_popup_title"
+                android:textAlignment="center"
+                android:textColor="@color/whiteText"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/textView3"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="50dp"
+                android:paddingVertical="20dp"
+                android:text="@string/charging_rate_info"
+                android:textAlignment="center"
+                android:textColor="@color/whiteText"
+                app:layout_constraintBottom_toTopOf="@id/btn_map_call_confirmed" />
+
+            <!--Button layout-->
+            <RelativeLayout
+                android:id="@+id/btn_map_call_confirmed"
+                style="@style/mainButton"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="center_horizontal"
+                android:alpha="1"
+                android:background="@drawable/main_btn_bg"
+                android:clickable="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent">
+
+                <ImageView
+                    android:layout_width="65dp"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="6dp"
+                    android:src="@drawable/map_btn_phone" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/popup_call_button"
+                    android:textColor="@color/whiteText" />
+            </RelativeLayout>
+            <!--End of button layout-->
+
+        </android.support.constraint.ConstraintLayout>
+
+
+    </android.support.constraint.ConstraintLayout>
 
 </RelativeLayout>

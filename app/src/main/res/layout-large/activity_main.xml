@@ -7,13 +7,15 @@
         android:gravity="center_horizontal"
         android:background="@drawable/main_bg">
 
+    <!--Buttons wrapper-->
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_marginBottom="30dp"
         android:layout_alignParentBottom="true">
-        <LinearLayout
+        <!--Map button-->
+        <RelativeLayout
             android:layout_width="@dimen/main_btn_width_large"
             android:layout_height="@dimen/main_btn_height_large"
             android:background="@drawable/main_btn_bg"
@@ -37,9 +39,10 @@
                 android:gravity="center"
                 />
 
-        </LinearLayout>
-
-        <LinearLayout
+        </RelativeLayout>
+        <!--End of map button-->
+        <!--About button-->
+        <RelativeLayout
             android:layout_width="@dimen/main_btn_width_large"
             android:layout_height="@dimen/main_btn_height_large"
             android:background="@drawable/main_btn_bg"
@@ -61,8 +64,10 @@
                 android:textColor="@color/whiteText"
                 android:gravity="center" />
 
-        </LinearLayout>
+        </RelativeLayout>
+        <!--End of about button-->
     </LinearLayout>
+    <!--End of buttons wrapper-->
 
 
     </RelativeLayout>

@@ -70,7 +70,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/whiteText"
-            android:textStyle="bold"
             android:text="Neem contact op met RSR Nederland"
             android:textSize="20sp"
             android:textAlignment="center"
@@ -88,10 +87,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/whiteText"
-                android:text="0900-7788990"
-                android:textSize="20sp"
-                android:textStyle="bold"/>
+                android:text="@string/emergency_number"
+                android:textSize="20sp" />
         </LinearLayout>
+        <!--End of phone icon with call number-->
+
         <!--Charging rate text-->
         <TextView
             android:layout_width="match_parent"

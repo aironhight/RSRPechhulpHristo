@@ -13,6 +13,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toolbar;
 
@@ -23,8 +24,7 @@ import com.example.airon.rsrpechhulp_hristo.activities.Map.MapActivity;
 
 public class MainActivity extends AppCompatActivity  implements View.OnClickListener{
 
-
-    private LinearLayout mapButton, infoButton;
+    private RelativeLayout mapButton, infoButton;
 
 
     @Override
@@ -32,16 +32,18 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Check for location services permissions
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            //Request permissions if not granted
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
         }
 
-        mapButton = (LinearLayout) findViewById(R.id.btn_main_map);
+        mapButton =  findViewById(R.id.btn_main_map);
         mapButton.setOnClickListener(this);
 
         //Initializes the info button in case that the device is a Tablet
         if (isTablet(MainActivity.this)) {
-            infoButton = (LinearLayout) findViewById(R.id.btn_main_info);
+            infoButton = (RelativeLayout) findViewById(R.id.btn_main_info);
             infoButton.setOnClickListener(this);
         }
     }

@@ -1,6 +1,7 @@
 package com.example.airon.rsrpechhulp_hristo.activities.Map;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -88,33 +89,13 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         //Initializes the call button if the device is not a tablet
         if(!isTablet(MapActivity.this)) {
             callButton = (RelativeLayout)findViewById(R.id.btn_map_call);
-            callButton.setOnClickListener(this);
+            callButton.setOnClickListener(this);//
         }
 
         callDialogWindow = new CustomDialog(MapActivity.this); //Initialize the custom dialog window for calling
         callDialogWindow.setOnDismissListener(this); //set a dismiss listener
     }
 
-
-    /**
-     * Checks if all the necessary services are enabled on.
-     */
-    @Override
-    protected void onResume() {
-        super.onResume();
-
-        //check if location services are permitted
-        if(ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-
-            //...make a request if they're not
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
-            return;
-        }
-
-        locationServicesEnabled(); //check if the location services are enabled...
-        networkAvailable();// check if there is network connection (wifi / mobile data)
-
-    }
 
 
     private final LocationListener locationListener = new LocationListener() {
@@ -163,6 +144,11 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 1000, 5, locationListener);
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        locationManager.removeUpdates(locationListener);
+    }
 
     /**
      * Updates the location of the device, setting the marker to the current Lattitude/Longtitude position.
@@ -310,22 +296,19 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         }
     }
 
+
+
+    @SuppressLint("MissingPermission")
     @Override
-    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
-        switch (requestCode) {
-            case 1: {
-                if (grantResults.length > 0
-                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    //permission granted
-                    if(locationServicesEnabled() && networkAvailable()) {
-                        updateLocationMarker();
-                        updateCamera();
-                    }
-                } else {
-                    //permission denied - close the app
-                    onDestroy();
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        if (requestCode == 1) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                if(locationServicesEnabled() && networkAvailable()) {
+                    locationManager.removeUpdates(locationListener);
+                    locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 1000, 5, locationListener);
                 }
-                return;
+            } else {
+                onDestroy();
             }
         }
     }
