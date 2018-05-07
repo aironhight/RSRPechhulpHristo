@@ -3,7 +3,6 @@ package com.example.airon.rsrpechhulp_hristo.activities;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Window;
 
 import com.example.airon.rsrpechhulp_hristo.R;
 import com.example.airon.rsrpechhulp_hristo.activities.Main.MainActivity;

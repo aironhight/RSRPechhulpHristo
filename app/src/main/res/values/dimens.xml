@@ -8,7 +8,6 @@
 
     <dimen name="toolbar_text_marginLeft">8dp</dimen>
 
-
     <dimen name="info_window_title_text_size">18sp</dimen>
     <dimen name="about_text_size">15sp</dimen>
     <dimen name="toolbar_text_size">16sp</dimen>

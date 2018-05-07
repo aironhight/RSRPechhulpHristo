@@ -12,10 +12,8 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
-import android.widget.Toolbar;
+
 
 import com.example.airon.rsrpechhulp_hristo.R;
 import com.example.airon.rsrpechhulp_hristo.activities.About.AboutActivity;

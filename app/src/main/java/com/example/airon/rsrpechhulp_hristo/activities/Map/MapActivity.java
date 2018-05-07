@@ -15,15 +15,14 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.support.constraint.ConstraintLayout;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
@@ -44,7 +43,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import java.util.List;
 import java.util.Locale;
 
-public class MapActivity extends AppCompatActivity implements OnMapReadyCallback, android.view.View.OnClickListener, DialogInterface.OnDismissListener{
+public class MapActivity extends AppCompatActivity implements OnMapReadyCallback, android.view.View.OnClickListener{
 
     private GoogleMap map;
     private LocationManager locationManager;
@@ -53,9 +52,9 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
     private Geocoder geocoder;
     private List<Address> deviceAddress;
     private ProgressBar gpsLoading;
-    private RelativeLayout callButton;
+    private RelativeLayout callButton, callConfirmedButton;
     private LinearLayout homeUpButton;
-    private CustomDialog callDialogWindow;
+    private ConstraintLayout callDialogWindow, closeCallDialogButton;
 
 
     @Override
@@ -89,11 +88,17 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         //Initializes the call button if the device is not a tablet
         if(!isTablet(MapActivity.this)) {
             callButton = (RelativeLayout)findViewById(R.id.btn_map_call);
-            callButton.setOnClickListener(this);//
+            callButton.setOnClickListener(this);
+
+            callDialogWindow = findViewById(R.id.dialogWindow);
+
+            closeCallDialogButton = findViewById(R.id.window_close_button);
+            closeCallDialogButton.setOnClickListener(this);
+
+            callConfirmedButton = findViewById(R.id.btn_map_call_confirmed);
+            callConfirmedButton.setOnClickListener(this);
         }
 
-        callDialogWindow = new CustomDialog(MapActivity.this); //Initialize the custom dialog window for calling
-        callDialogWindow.setOnDismissListener(this); //set a dismiss listener
     }
 
 
@@ -116,7 +121,18 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
 
         @Override
         public void onProviderEnabled(String provider) {
+            if(locationServicesEnabled() && networkAvailable()) {
+                //check if location services are permitted
+                if(ActivityCompat.checkSelfPermission(MapActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
 
+                    //...make a request if they're not
+                    ActivityCompat.requestPermissions(MapActivity.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
+                    return;
+                }
+
+                locationManager.removeUpdates(locationListener);
+                locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 1000, 5, locationListener);
+            }
         }
 
         @Override
@@ -280,21 +296,49 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
     @Override
     public void onClick(View v) {
         if(v == callButton) {
-            callDialogWindow.show(); //show the custom dialog
-            callButton.setVisibility(View.INVISIBLE); //make the call button invisible
+            openCallDialog();
+        }
 
-            Window window = callDialogWindow.getWindow();
-            WindowManager.LayoutParams wlp = window.getAttributes();
-
-            wlp.gravity = Gravity.BOTTOM; //attaches the dialog window to the bottom of the screen
-            wlp.alpha = (float) 0.85; //makes it slightly transparent
-            window.setAttributes(wlp);
+        else if(v == closeCallDialogButton) {
+            closeCallDialog();
         }
 
         else if(v == homeUpButton) {
             onBackPressed();
         }
+
+        if(v == callConfirmedButton) {
+            callEmergencyNumber();
+        }
+
+
     }
+
+    /**
+     * Opens the call dialog by making its layout visible and hiding the call button
+     */
+    private void openCallDialog() {
+        callDialogWindow.setVisibility(View.VISIBLE);
+        callButton.setVisibility(View.INVISIBLE);
+    }
+
+    /**
+     * Closes the call dialog by making its layout invisible and showing the call button
+     */
+    private void closeCallDialog() {
+        callDialogWindow.setVisibility(View.INVISIBLE);
+        callButton.setVisibility(View.VISIBLE);
+    }
+
+    /**
+    * Calls the emergency number
+    */
+    private void callEmergencyNumber() {
+        Intent callIntent = new Intent(Intent.ACTION_DIAL);
+        callIntent.setData(Uri.parse("tel:+0900-7788990"));
+        startActivity(callIntent);
+    }
+
 
 
 
@@ -318,12 +362,6 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         super.onBackPressed();
         finish();//kills the current activity
         startActivity(new Intent(getApplicationContext(), MainActivity.class)); //starts the main activity
-    }
-
-    @Override
-    public void onDismiss(DialogInterface dialog) {
-        //makes the call button visible after the dialog has been dismissed
-        callButton.setVisibility(View.VISIBLE);
     }
 }
 

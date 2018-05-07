@@ -12,7 +12,7 @@
     <string name="try_again">Probeer opnieuw</string>
     <string name="cancel">Annuleren</string>
     <string name="charging_rate_info">9,4 cent per gesprek plus 2,8 cent per minuut, plus uw gebruikelijke belkosten.</string>
-    <string name="emergency_number">+0900-7788990</string>
+    <string name="emergency_number">0900-7788990</string>
     <string name="text_about_activity">"MMet de hulpmiddelen van RSR blijft u mobiel. RSR is dé leverancier van hulpmiddelen in de regio Noordoost-Nederland. Gedegen kennis en jarenlange ervaring zit in ons DNA verweven en leidt tot het beste advies.\n\nWilt u meer weten over onze producten en diensten, kijk dan op www.rsr.nl of bezoek onze showrooms in Silvolde en Nieuwleusen. We zijn iedere werkdag geopend van 8.00 tot 17.00 uur. Hier kunt u diverse hulpmiddelen uitproberen en rustig bekijken wat goed bij uw situatie aansluit. Samen met u zoeken we naar het hulpmiddel dat bij u past. RSR maakt mensen mobiel."</string>
     <string name="map_info_window_text">Onthoud deze locatie voor het \ntelefoongesprek</string>
     <string name="map_info_window_title">Uw Locatie:</string>
@@ -20,4 +20,5 @@
     <string name="map_call_button">Bel RSR nu</string>
     <string name="popup_call_button">Bel nu</string>
     <string name="map_popup_title">Belkosten</string>
+    <string name="map_popup_text">Voor dit nummer betaalt u uw \ngebruikelijke belkosten.</string>
 </resources>

@@ -2,7 +2,6 @@
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -69,7 +68,8 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/horizontalLineView">
+        app:layout_constraintTop_toBottomOf="@+id/horizontalLineView"
+        android:id="@+id/scrollView">
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
@@ -77,11 +77,12 @@
             android:text="@string/text_about_activity"
             android:textAlignment="textStart"
             android:textColor="#000"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:autoLink="web"
             android:textColorLink="@color/linkText"
             android:lineSpacingExtra = "7sp"
             style="@style/textAboutLarge"
+            android:scrollHorizontally="true"
 
             />
     </ScrollView>
@@ -97,8 +98,8 @@
         android:src="@drawable/splash_logo_rsr"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/scrollView"/>
 
 
 
