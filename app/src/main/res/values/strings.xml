@@ -18,7 +18,8 @@
     <string name="map_info_window_title">Uw Locatie:</string>
     <string name="map_info_window_obtaining_address">Verkrijgen adres...</string>
     <string name="map_call_button">Bel RSR nu</string>
-    <string name="popup_call_button">Bel nu</string>
-    <string name="map_popup_title">Belkosten</string>
-    <string name="map_popup_text">Voor dit nummer betaalt u uw \ngebruikelijke belkosten.</string>
+    <string name="text_btn_popup_call">Bel nu</string>
+    <string name="text_map_popup_title">Belkosten</string>
+    <string name="text_map_popup">Voor dit nummer betaalt u uw \ngebruikelijke belkosten.</string>
+    <string name="text_map_contact_title">Neem contact op met RSR Nederland</string>
 </resources>

@@ -7,5 +7,5 @@
     <color name="yellowBG">#cad302</color>
     <color name="aboutText">#000</color>
     <color name="linkText">#0092bb</color>
-    <color name="map_background_opacity">#9f000000</color>
+    <color name="mapBackGroundOpacity">#9f000000</color>
 </resources>

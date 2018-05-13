@@ -25,21 +25,22 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
-            android:id="@+id/toolbar_home_up">
+            android:id="@+id/activity_info_ll_homeup">
 
             <ImageView
-                android:id="@+id/backButton"
+                android:id="activity_info_btn_back"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:layout_centerInParent="true"
+                android:layout_gravity="center"
                 android:src="@drawable/menu_arrow"
                 />
 
             <TextView
-                android:id="@+id/toolbar_title"
+                android:id="@+id/activity_info_tv_toolbar_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
+                android:textSize="@dimen/toolbar_text_size_large"
                 android:background="@color/colorPrimary"
                 android:textColor="@color/whiteText" />
         </LinearLayout>
@@ -69,7 +70,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/whiteText"
-            android:text="Neem contact op met RSR Nederland"
+            android:text="@string/text_map_contact_title"
             android:textSize="20sp"
             android:textAlignment="center"
             />

@@ -66,9 +66,9 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         setSupportActionBar(toolbar);
 
 
-        TextView toolbarTitle = (TextView) findViewById(R.id.toolbar_title);
+        TextView toolbarTitle = (TextView) findViewById(R.id.activity_info_tv_toolbar_title);
         toolbarTitle.setText(R.string.label_activity_map);
-        homeUpButton = (LinearLayout)findViewById(R.id.toolbar_home_up);
+        homeUpButton = (LinearLayout)findViewById(R.id.activity_info_ll_homeup);
         homeUpButton.setOnClickListener(this);
 
         gpsLoading = (ProgressBar) findViewById(R.id.clockProgressBar);
@@ -90,9 +90,9 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
             callButton = (RelativeLayout)findViewById(R.id.btn_map_call);
             callButton.setOnClickListener(this);
 
-            callDialogWindow = findViewById(R.id.dialogWindow);
+            callDialogWindow = findViewById(R.id.dialog_window);
 
-            closeCallDialogButton = findViewById(R.id.window_close_button);
+            closeCallDialogButton = findViewById(R.id.btn_window_close);
             closeCallDialogButton.setOnClickListener(this);
 
             callConfirmedButton = findViewById(R.id.btn_map_call_confirmed);

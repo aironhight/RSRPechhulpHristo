@@ -22,10 +22,9 @@
     </style>
 
     <style name="textAboutLarge">
-        <item name="android:layout_marginEnd"> 8dp </item>
-        <item name="android:layout_marginStart"> 8dp </item>
-        <item name="android:layout_marginTop"> 8dp </item>
-        <item name="android:padding">@dimen/about_text_padding_large</item>
+        <item name="android:paddingTop">@dimen/about_text_padding_large</item>
+        <item name="android:paddingLeft">@dimen/about_text_padding_large</item>
+        <item name="android:paddingRight">@dimen/about_text_padding_large</item>
     </style>
 
 

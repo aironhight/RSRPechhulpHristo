@@ -6,9 +6,10 @@
     <dimen name="about_text_padding_large">40dp</dimen>
     <dimen name="info_window_text_padding">4dp</dimen>
 
-    <dimen name="toolbar_text_marginLeft">8dp</dimen>
+    <dimen name="toolbar_text_marginStart">8dp</dimen>
 
     <dimen name="info_window_title_text_size">18sp</dimen>
     <dimen name="about_text_size">15sp</dimen>
     <dimen name="toolbar_text_size">16sp</dimen>
+    <dimen name="toolbar_text_size_large">20sp</dimen>
 </resources>

@@ -23,9 +23,9 @@ public class AboutActivity extends AppCompatActivity implements View.OnClickList
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
-        TextView toolbarTitle = (TextView) findViewById(R.id.toolbar_title);
+        TextView toolbarTitle = (TextView) findViewById(R.id.activity_info_tv_toolbar_title);
         toolbarTitle.setText(R.string.label_activity_about);
-        homeUpButton = (LinearLayout)findViewById(R.id.toolbar_home_up);
+        homeUpButton = (LinearLayout)findViewById(R.id.activity_info_ll_homeup);
         homeUpButton.setOnClickListener(this);
     }
 

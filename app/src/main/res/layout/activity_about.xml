@@ -2,7 +2,6 @@
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -21,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:id="@+id/toolbar_home_up"
+            android:id="@+id/activity_info_ll_homeup"
             android:gravity="center_vertical">
 
             <ImageView
@@ -34,13 +33,13 @@
                 android:scaleType="centerCrop" />
 
             <TextView
-                android:id="@+id/toolbar_title"
+                android:id="@+id/activity_info_tv_toolbar_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:background="@color/linkText"
                 android:textColor="@color/whiteText"
-                android:layout_marginLeft="@dimen/toolbar_text_marginLeft"/>
+                android:layout_marginStart="@dimen/toolbar_text_marginStart"/>
         </LinearLayout>
     </android.support.v7.widget.Toolbar>
 
@@ -48,7 +47,7 @@
 
     <!--Banner image-->
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/activity_info_image_info"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -65,11 +64,11 @@
         android:layout_height="10dp"
         android:background="@color/colorPrimary"
         android:id="@+id/horizontalLineView"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"/>
+        app:layout_constraintTop_toBottomOf="@+id/activity_info_image_info"/>
 
     <!--Text-->
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/text_info"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginEnd="2dp"
@@ -80,7 +79,7 @@
         android:textSize="@dimen/about_text_size"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/activity_info_image_info"
         android:autoLink="web"
         android:textColorLink="@color/colorPrimary"
         android:textColor="@color/colorPrimaryDark"/>
