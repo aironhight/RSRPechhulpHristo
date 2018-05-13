@@ -36,12 +36,12 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
         }
 
-        mapButton =  findViewById(R.id.btn_main_map);
+        mapButton =  findViewById(R.id.activity_main_btn_map);
         mapButton.setOnClickListener(this);
 
         //Initializes the info button in case that the device is a Tablet
         if (isTablet(MainActivity.this)) {
-            infoButton = (RelativeLayout) findViewById(R.id.btn_main_info);
+            infoButton = (RelativeLayout) findViewById(R.id.activity_main_btn_info);
             infoButton.setOnClickListener(this);
         }
     }
@@ -101,7 +101,7 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         //Starts About activity and destroys the current activity
-        if (item.getItemId() == R.id.btn_main_info) {
+        if (item.getItemId() == R.id.activity_main_btn_info) {
             startActivity(new Intent(getApplicationContext(), AboutActivity.class));
             finish();
             return true;

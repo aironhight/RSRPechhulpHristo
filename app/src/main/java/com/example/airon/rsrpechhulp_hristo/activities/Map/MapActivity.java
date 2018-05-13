@@ -62,13 +62,13 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
 
-        android.support.v7.widget.Toolbar toolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.toolbar_map);
+        android.support.v7.widget.Toolbar toolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.activity_map_toolbar);
         setSupportActionBar(toolbar);
 
 
         TextView toolbarTitle = (TextView) findViewById(R.id.activity_info_tv_toolbar_title);
         toolbarTitle.setText(R.string.label_activity_map);
-        homeUpButton = (LinearLayout)findViewById(R.id.activity_info_ll_homeup);
+        homeUpButton = (LinearLayout)findViewById(R.id.toolbar_homeup);
         homeUpButton.setOnClickListener(this);
 
         gpsLoading = (ProgressBar) findViewById(R.id.clockProgressBar);
@@ -87,15 +87,15 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
 
         //Initializes the call button if the device is not a tablet
         if(!isTablet(MapActivity.this)) {
-            callButton = (RelativeLayout)findViewById(R.id.btn_map_call);
+            callButton = (RelativeLayout)findViewById(R.id.activity_map_btn_call);
             callButton.setOnClickListener(this);
 
             callDialogWindow = findViewById(R.id.dialog_window);
 
-            closeCallDialogButton = findViewById(R.id.btn_window_close);
+            closeCallDialogButton = findViewById(R.id.activity_map_btn_window_close);
             closeCallDialogButton.setOnClickListener(this);
 
-            callConfirmedButton = findViewById(R.id.btn_map_call_confirmed);
+            callConfirmedButton = findViewById(R.id.activity_map_btn_call_confirmed);
             callConfirmedButton.setOnClickListener(this);
         }
 
@@ -362,6 +362,13 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         super.onBackPressed();
         finish();//kills the current activity
         startActivity(new Intent(getApplicationContext(), MainActivity.class)); //starts the main activity
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        networkAvailable();
+        locationServicesEnabled();
     }
 }
 

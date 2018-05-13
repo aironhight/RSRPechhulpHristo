@@ -19,22 +19,21 @@
             android:layout_width="@dimen/main_btn_width_large"
             android:layout_height="@dimen/main_btn_height_large"
             android:background="@drawable/main_btn_bg"
-            android:layout_alignParentBottom="true"
-            android:layout_marginVertical="10dp"
             android:clickable="true"
-            android:id="@+id/btn_main_map">
+            android:id="@+id/activity_main_btn_map">
 
             <ImageView
                 android:layout_width="65dp"
                 android:layout_height="wrap_content"
                 android:src="@drawable/main_btn_warning"
-                android:paddingVertical="6dp"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
                 />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="RSR Pechhulp"
+                android:text="@string/label_activity_map"
                 android:textColor="@color/whiteText"
                 android:gravity="center"
                 />
@@ -46,21 +45,22 @@
             android:layout_width="@dimen/main_btn_width_large"
             android:layout_height="@dimen/main_btn_height_large"
             android:background="@drawable/main_btn_bg"
-            android:layout_alignParentBottom="true"
-            android:layout_marginVertical="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
             android:clickable="true"
-            android:id="@+id/btn_main_info">
+            android:id="@+id/activity_main_btn_info">
 
             <ImageView
                 android:layout_width="65dp"
                 android:layout_height="wrap_content"
                 android:src="@drawable/main_btn_info"
-                android:paddingVertical="6dp" />
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Over RSR"
+                android:text="@string/label_activity_about"
                 android:textColor="@color/whiteText"
                 android:gravity="center" />
 

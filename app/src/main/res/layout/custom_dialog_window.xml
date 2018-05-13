@@ -70,7 +70,7 @@
 
         <!--Button layout-->
         <RelativeLayout
-            android:id="@+id/btn_map_call_confirmed"
+            android:id="@+id/activity_map_btn-call_confirmed"
             style="@style/mainButton"
             android:layout_alignParentBottom="true"
             android:layout_gravity="center_horizontal"

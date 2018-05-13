@@ -19,13 +19,13 @@ public class AboutActivity extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
 
-        android.support.v7.widget.Toolbar toolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.toolbar);
+        android.support.v7.widget.Toolbar toolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.activity_info_toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         TextView toolbarTitle = (TextView) findViewById(R.id.activity_info_tv_toolbar_title);
         toolbarTitle.setText(R.string.label_activity_about);
-        homeUpButton = (LinearLayout)findViewById(R.id.activity_info_ll_homeup);
+        homeUpButton = (LinearLayout)findViewById(R.id.toolbar_homeup);
         homeUpButton.setOnClickListener(this);
     }
 
